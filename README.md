@@ -22,5 +22,5 @@
 
 ## 📄 Experience & Education
 * **B.Sc. Computer Science** - University of Regina (Dec 2026)
-* **Diploma in Networking** - Saskatchewan Polytechnic (May 2025)
+* **Certificate in Networking** - Saskatchewan Polytechnic (May 2025)
 * **Pharmacy Assistant** - Regina, SK
