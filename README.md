@@ -1,4 +1,4 @@
-# Sunny Soni | Computer Science & Cybersecurity
+# Sunny Soni | Computer Science 
 **Regina, SK | CS Student @ U of R | Founder of PharmaBridge**
 
 ---
