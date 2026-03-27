@@ -13,7 +13,7 @@
 * **High-Density Data Encoding:** Leverages custom-built logic to pack complex patient profiles into a streamlined, scannable format.
 * **User-Centric Design:** Focused on reducing administrative friction for pharmacists and healthcare providers by 40%.
 
-*Note: Technical architecture and source code are private due to the proprietary nature of the project within the incubator.*
+
 ---
 
 ## 🛠 Technical Skills
