@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunny Soni · Portfolio</title>
+<meta name="description" content="Sunny Soni: Computer Science student at the University of Regina, founder of PharmaBridge, and IT/security-minded builder in Regina, Saskatchewan.">
+<meta property="og:title" content="Sunny Soni · Portfolio">
+<meta property="og:description" content="CS student at the University of Regina and founder of PharmaBridge.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1413'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-size='34' font-weight='700' fill='%236EE7B7'%3ES_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#6EE7B7;--bg:#0E1413;--panel:#151D1B;--line:#26302D;--line2:#3A4743;--text:#E9EEEC;--soft:#C9D3CF;--muted:#9AA8A3;--mono:'IBM Plex Mono',monospace;--display:Archivo,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:#A7F3D0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+.mono{font-family:var(--mono)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;transform-origin:0 50%;transform:scaleX(0);z-index:30;pointer-events:none;background:var(--accent)}
+header{position:sticky;top:0;z-index:20;background:rgba(14,20,19,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-top:14px;padding-bottom:14px}
+.logo{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--text);text-decoration:none;padding:12px 0}
+.links{display:flex;flex-wrap:wrap;gap:0 24px;font-family:var(--mono);font-size:14px}
+.navlink{position:relative;color:var(--muted);text-decoration:none;padding:12px 0}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s ease}
+.navlink:hover{color:var(--text)}.navlink:hover::after{transform:scaleX(1)}
+.spot{position:relative;overflow:hidden}
+.spot::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 16%,transparent),transparent 65%)}
+.spot:hover::before{opacity:1}
+.spot>*{position:relative;z-index:1}
+.lift{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease}
+.lift:hover{transform:translateY(-6px);border-color:var(--accent)!important}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;font-weight:600;text-decoration:none;border-radius:8px;transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--accent)}
+.btn-primary{background:var(--accent);color:var(--bg)}.btn-primary:hover{color:var(--bg)}
+.btn-ghost{border:1px solid var(--line2);color:var(--text)}.btn-ghost:hover{color:var(--text)}
+.caret{display:inline-block;width:3px;height:1em;margin-left:4px;vertical-align:-.12em;background:var(--accent);animation:blink 1s steps(1) infinite}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+.hero{padding-top:104px;padding-bottom:88px;display:flex;flex-wrap:wrap;gap:56px;align-items:center}
+.hero-text{flex:999 1 520px;min-width:0}
+.pill{margin:0 0 24px;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;color:var(--soft);padding:8px 14px;border:1px solid var(--line);border-radius:999px}
+h1{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(56px,9vw,116px);line-height:.95;letter-spacing:-.03em}
+.typer{margin:28px 0 0;min-height:1.4em;font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.2;color:var(--soft)}
+.lead{margin:24px 0 0;max-width:580px;font-size:19px;color:var(--muted)}
+.cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
+.term{flex:1 1 400px;min-width:0;background:#0A0F0E;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:#121A18}
+.term-bar span.l{width:11px;height:11px;border-radius:50%;background:var(--line2)}
+.term-body{height:250px;overflow-y:auto;padding:16px 18px;font-family:var(--mono);font-size:13.5px;line-height:1.65;color:var(--soft)}
+.term-body div{white-space:pre-wrap;word-break:break-word;animation:line .3s ease both}
+.term-body .p{color:var(--accent)}
+.term-in{display:flex;align-items:center;gap:8px;padding:10px 18px;border-top:1px solid var(--line)}
+.term-in input{flex:1;min-width:0;min-height:40px;background:transparent;border:0;outline:none;color:var(--text);font-family:var(--mono);font-size:14px}
+.term-cmds{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 16px}
+.cmd{min-height:36px;padding:0 12px;background:transparent;border:1px solid var(--line);border-radius:6px;color:var(--muted);font-family:var(--mono);font-size:12px;cursor:pointer;transition:border-color .2s,color .2s}
+.cmd:hover,.cmd:focus-visible{border-color:var(--accent);color:var(--text)}
+.marquee-wrap{margin:0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.marquee{display:flex;width:max-content;gap:16px;animation:marquee 38s linear infinite}
+.marquee-wrap:hover .marquee{animation-play-state:paused}
+.marquee span{display:inline-flex;align-items:center;gap:16px;font-family:var(--display);font-weight:700;font-size:30px;white-space:nowrap;color:var(--soft)}
+.marquee i{font-style:normal;color:var(--accent)}
+section.block{padding:96px 0;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 12px;font-family:var(--mono);font-size:14px;color:var(--accent)}
+h2{margin:0 0 48px;font-family:var(--display);font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.02em}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.featured{display:flex;flex-wrap:wrap;gap:48px;padding:48px}
+@media (max-width:600px){.featured{padding:28px}}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tag{font-family:var(--mono);font-size:12px;padding:6px 12px;border-radius:999px;border:1px solid var(--line2);color:var(--soft)}
+.tag.hot{background:#1E3A31;color:#A7F3D0;border-color:#1E3A31}
+h3{margin:0}
+.label{margin:0;font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.award{padding:20px;border:1px solid var(--line2);border-radius:12px}
+.filters-row{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;padding:4px;border:1px solid var(--line);border-radius:999px}
+.filters button{min-height:40px;padding:0 16px;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--muted);font-family:var(--mono);font-size:13px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);color:var(--bg);font-weight:500}
+.filters button[aria-pressed="false"]:hover{border-color:var(--accent);color:var(--text)}
+.grid{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.proj{padding:32px;display:flex;flex-direction:column;gap:14px;min-height:240px;animation:pop .55s cubic-bezier(.2,.7,.2,1) both}
+.proj h3{font-family:var(--display);font-weight:700;font-size:26px}
+.proj p{margin:0}
+.stack{margin-top:auto!important;font-family:var(--mono);font-size:13px;color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:8px 48px;padding:32px 16px;border-top:1px solid var(--line);border-radius:12px;transition:background .3s}
+.row:hover{background:#121A18}
+.row .when{margin:0;flex:0 0 200px;font-family:var(--mono);font-size:14px;color:var(--muted)}
+.row h3{font-size:22px;font-weight:600}
+.row p.d{margin:8px 0 0;color:var(--soft)}
+.cert{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px;border-radius:12px}
+.contact{padding-top:120px;padding-bottom:104px}
+footer .wrap{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none}
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}50%{box-shadow:0 0 0 8px transparent}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes line{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+.js .reveal,.js .hero-text,.js .term{opacity:0;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .reveal{transform:translateY(60px) scale(.97)}
+.js .hero-text{transform:translateY(48px)}
+.js .term{transform:translateX(72px);transition-delay:.25s}
+.js .reveal:nth-child(2){transition-delay:.12s}
+.js .reveal:nth-child(3){transition-delay:.24s}
+.js .in{opacity:1!important;transform:none!important}
+@media (prefers-reduced-motion:reduce){.js .reveal,.js .hero-text,.js .term{opacity:1;transform:none;transition:none}.marquee,.caret,.dot,.proj,.term-body div{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+<nav class="wrap">
+<a class="logo" href="#top">sunny.soni<span class="caret" style="width:9px;height:3px;vertical-align:0"></span></a>
+<div class="links">
+<a class="navlink" href="#terminal">Terminal</a>
+<a class="navlink" href="#work">Work</a>
+<a class="navlink" href="#experience">Experience</a>
+<a class="navlink" href="#education">Education</a>
+<a class="navlink" href="#contact" style="color:var(--accent)">Contact</a>
+</div>
+</nav>
+</header>
+
+<main id="top">
+<div class="spot" data-spot>
+<section class="wrap hero">
+<div class="hero-text">
+<p class="pill"><span class="dot"></span>Regina, SK · open to IT and security roles</p>
+<h1>Sunny Soni</h1>
+<p class="typer">I <span id="typed" style="color:var(--accent)"></span><span class="caret" aria-hidden="true"></span></p>
+<p class="lead">Computer Science student at the University of Regina and founder of PharmaBridge. I build software for problems I see up close.</p>
+<div class="cta">
+<a class="btn btn-primary" href="#work">See my work
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/sunny-soni-0124b21b1" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+
+<div id="terminal" class="term">
+<div class="term-bar"><span class="l"></span><span class="l"></span><span class="l"></span><span class="mono" style="margin-left:8px;font-size:12px;color:var(--muted)">sunny@regina: ~</span></div>
+<div class="term-body" id="term-body" aria-live="polite"></div>
+<form class="term-in" id="term-form" autocomplete="off">
+<span aria-hidden="true" class="mono" style="color:var(--accent)">$</span>
+<label for="term-input" class="sr-only">Type a command</label>
+<input id="term-input" type="text" spellcheck="false" placeholder="type help and press Enter">
+</form>
+<div class="term-cmds" id="term-cmds"></div>
+</div>
+</section>
+</div>
+
+<div class="marquee-wrap" aria-label="Skills">
+<div class="marquee" id="marquee"></div>
+</div>
+
+<div class="wrap">
+<section id="work" class="block">
+<p class="eyebrow">01 / Work</p>
+<h2 class="reveal">Things I have built</h2>
+
+<article class="card featured spot lift reveal" data-spot>
+<div style="flex:999 1 480px;min-width:0">
+<div class="tags"><span class="tag hot">Featured</span><span class="tag">Healthtech startup</span><span class="tag">FHIR</span></div>
+<h3 style="font-family:var(--display);font-weight:700;font-size:40px;letter-spacing:-.02em">PharmaBridge</h3>
+<p style="margin:16px 0 0;font-size:19px;color:var(--soft)">Automating pharmacy billing and coordination of benefits (COB) using FHIR standards. I started it after handling manual COB claims myself as a pharmacy assistant, then spent 60 days interviewing pharmacists and billing staff before writing any code.</p>
+<ul style="margin:24px 0 0;padding-left:20px;color:var(--soft);display:flex;flex-direction:column;gap:8px">
+<li>Accepted into the Cultivator START accelerator (Conexus)</li>
+<li>Prototyped HealthCard Connect, a patient view of health cards, insurance plans and claim history</li>
+<li>Scoped a billing note parser, a COB claim checker agent and an MVP demo</li>
+</ul>
+</div>
+<div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:12px">
+<p class="label">Enactus Regina 2026</p>
+<div class="award"><p style="margin:0;font-family:var(--display);font-weight:800;font-size:32px;color:var(--accent)">2nd Place</p><p style="margin:4px 0 0;font-size:15px;color:var(--muted)">Pitch competition</p></div>
+<div class="award"><p style="margin:0;font-weight:600">Visual Impact Award</p></div>
+<div class="award"><p style="margin:0;font-weight:600">Sharp Thinker Award</p></div>
+</div>
+</article>
+
+<div class="filters-row">
+<p class="mono" style="margin:0;font-size:13px;color:var(--muted)">More projects · filter by type</p>
+<div class="filters" role="group" aria-label="Filter projects" id="filters"></div>
+</div>
+<div class="grid" id="projects"></div>
+</section>
+
+<section id="experience" class="block">
+<p class="eyebrow">02 / Experience</p>
+<h2 class="reveal">Where I have worked</h2>
+<div style="border-bottom:1px solid var(--line)">
+<div class="row reveal"><p class="when">2026 to present</p><div style="flex:1 1 480px;min-width:0"><h3>Founder · PharmaBridge</h3><p class="d">Leading problem discovery, product scoping and pitching for a pharmacy billing automation platform through the Cultivator START program.</p></div></div>
+<div class="row reveal"><p class="when">Oct 2024 to present</p><div style="flex:1 1 480px;min-width:0"><h3>Pharmacy Assistant · Shoppers Drug Mart, Regina</h3><p class="d">Process prescriptions and third-party insurance claims, including coordination of benefits, while serving patients in a fast-paced pharmacy. This is where the idea for PharmaBridge came from.</p></div></div>
+<div class="row reveal"><p class="when">Feb 2024 to present</p><div style="flex:1 1 480px;min-width:0"><h3>AI Training Contributor · Outlier and Scale AI</h3><p class="d">Evaluate and improve large language model responses on coding and reasoning tasks, writing detailed feedback against quality guidelines.</p></div></div>
+</div>
+</section>
+
+<section id="education" class="block" style="display:flex;flex-wrap:wrap;gap:48px">
+<div style="flex:1 1 480px;min-width:0">
+<p class="eyebrow">03 / Education</p>
+<h2 class="reveal" style="margin-bottom:40px">Education</h2>
+<div style="display:flex;flex-direction:column;gap:28px">
+<div class="reveal"><h3 style="font-size:21px;font-weight:600">Bachelor of Science, Computer Science</h3><p style="margin:4px 0 0;color:var(--muted)">University of Regina</p></div>
+<div class="reveal"><h3 style="font-size:21px;font-weight:600">Diploma, Computer Science</h3><p style="margin:4px 0 0;color:var(--muted)">University of Regina</p></div>
+</div>
+</div>
+<div style="flex:1 1 380px;min-width:0">
+<p class="eyebrow">04 / Certifications</p>
+<h2 class="reveal" style="margin-bottom:40px">Certifications</h2>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="cert card lift reveal"><span style="font-weight:600">Cisco CyberOps Associate</span><span class="mono" style="font-size:13px;color:var(--accent)">Earned</span></div>
+<div class="cert card lift reveal"><span style="font-weight:600">Cisco CCNA: Introduction to Networks</span><span class="mono" style="font-size:13px;color:var(--accent)">Earned</span></div>
+<div class="cert lift reveal" style="border:1px dashed var(--line2)"><span style="font-weight:600">Microsoft Azure Fundamentals (AZ-900)</span><span class="mono" style="font-size:13px;color:var(--muted)">In progress</span></div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="spot" data-spot>
+<section id="contact" class="wrap contact">
+<p class="eyebrow">05 / Contact</p>
+<h2 class="reveal" style="margin:0;max-width:820px;font-weight:800;font-size:clamp(40px,7vw,88px);line-height:1;letter-spacing:-.03em">Let's build something useful.</h2>
+<p class="reveal" style="margin:28px 0 0;max-width:600px;font-size:20px;color:var(--soft)">I am looking for IT, service desk and security analyst roles in Saskatchewan, and always happy to talk pharmacy tech.</p>
+<div class="cta" style="margin-top:40px">
+<a class="btn btn-primary" href="mailto:sunnysony830@gmail.com">sunnysony830@gmail.com</a>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/sunny-soni-0124b21b1" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn btn-ghost" href="https://github.com/Sunnysoni710" target="_blank" rel="noopener">GitHub</a>
+</div>
+</section>
+</div>
+</main>
+
+<footer style="border-top:1px solid var(--line)">
+<div class="wrap"><span>© <span id="year">2026</span> Sunny Soni</span><a href="#top">Back to top ↑</a></div>
+</footer>
+
+<script>
+(function () {
+  var ROLES = ['build healthtech.', 'fix pharmacy billing.', 'secure networks.', 'ship side projects.', 'pitch, then build.'];
+  var OUTPUT = {
+    'help': "Commands: whoami, projects, skills, awards, education, contact, clear\nPsst: try 'sudo hire sunny'",
+    'whoami': 'Sunny Soni. CS student at the University of Regina, founder of PharmaBridge, pharmacy assistant at Shoppers Drug Mart.',
+    'projects': 'PharmaBridge (healthtech startup)\nHealthCard Connect (prototype)\nUR Navigator (UR Hacks)\nCampus Companion (in progress)',
+    'skills': 'React, TypeScript, JavaScript, Java, Python, REST APIs, FHIR, routing and switching, Active Directory, security operations',
+    'awards': 'Enactus Regina 2026: 2nd Place, Visual Impact Award, Sharp Thinker Award',
+    'education': 'BSc Computer Science, University of Regina\nDiploma, Computer Science, University of Regina',
+    'contact': 'Email: sunnysony830@gmail.com\nLinkedIn: https://www.linkedin.com/in/sunny-soni-0124b21b1\nGitHub: https://github.com/Sunnysoni710',
+    'sudo hire sunny': 'Permission granted. Scroll down to Contact and say hi.',
+    'ls': 'about.txt  projects/  pharmabridge/',
+    'pwd': '/home/sunny/regina'
+  };
+  var PROJECTS = [
+    { type: 'Startup', tag: 'Startup · Prototype', title: 'HealthCard Connect', desc: 'A patient view of health cards, insurance plans and claim history, built to test ideas for PharmaBridge.', stack: 'Base44 · FHIR concepts' },
+    { type: 'Hackathon', tag: 'Hackathon · UR Hacks', title: 'UR Navigator', desc: 'A campus navigation app built during UR Hacks to help students find their way around the University of Regina.', stack: 'React · Java · Apple Maps API' },
+    { type: 'App', tag: 'App · In progress', title: 'URegina Campus Companion', desc: 'An all-in-one companion app for University of Regina students, with a formal project proposal behind it.', stack: 'Google AI Studio · Gemini' }
+  ];
+  var TABS = ['All', 'Startup', 'Hackathon', 'App'];
+  var SKILLS = ['React', 'TypeScript', 'FHIR', 'Java', 'Python', 'Security Operations', 'Routing and Switching', 'Active Directory', 'REST APIs', 'Three.js', 'Pitching', 'Customer Service'];
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  // Typewriter
+  var typed = document.getElementById('typed');
+  var ri = 0, ci = 0, del = false, hold = 0;
+  setInterval(function () {
+    var w = ROLES[ri];
+    if (hold > 0) { hold--; return; }
+    if (!del) { ci++; if (ci >= w.length) { ci = w.length; del = true; hold = 28; } }
+    else { ci--; if (ci <= 0) { ci = 0; del = false; ri = (ri + 1) % ROLES.length; hold = 4; } }
+    typed.textContent = ROLES[ri].slice(0, ci);
+  }, 60);
+
+  // Terminal
+  var body = document.getElementById('term-body');
+  var input = document.getElementById('term-input');
+  function print(prompt, text) {
+    var d = el('div');
+    if (prompt) d.appendChild(el('span', 'p', prompt));
+    d.appendChild(document.createTextNode(text));
+    body.appendChild(d);
+    while (body.children.length > 40) body.removeChild(body.firstChild);
+    body.scrollTop = body.scrollHeight;
+  }
+  function run(raw) {
+    var cmd = String(raw || '').trim();
+    if (!cmd) return;
+    var key = cmd.toLowerCase();
+    if (key === 'clear') { body.innerHTML = ''; return; }
+    print('$ ', cmd);
+    print('', OUTPUT[key] || ('command not found: ' + cmd + "\nType 'help' to see what I know."));
+  }
+  print('', "Welcome. Type 'help' or tap a command below.");
+  document.getElementById('term-form').addEventListener('submit', function (e) { e.preventDefault(); run(input.value); input.value = ''; });
+  var cmds = document.getElementById('term-cmds');
+  ['help', 'whoami', 'projects', 'awards', 'contact', 'sudo hire sunny'].forEach(function (c) {
+    var b = el('button', 'cmd', c); b.type = 'button';
+    b.addEventListener('click', function () { run(c); });
+    cmds.appendChild(b);
+  });
+
+  // Marquee
+  var mq = document.getElementById('marquee');
+  SKILLS.concat(SKILLS).forEach(function (s, i) {
+    var sp = el('span', null, s); var star = el('i', null, '✦'); star.setAttribute('aria-hidden', 'true');
+    sp.appendChild(star); if (i >= SKILLS.length) sp.setAttribute('aria-hidden', 'true');
+    mq.appendChild(sp);
+  });
+
+  // Project filters
+  var filters = document.getElementById('filters');
+  var grid = document.getElementById('projects');
+  var current = 'All';
+  function renderProjects() {
+    grid.innerHTML = '';
+    PROJECTS.filter(function (p) { return current === 'All' || p.type === current; }).forEach(function (p) {
+      var a = el('article', 'card proj spot lift');
+      a.setAttribute('data-spot', '');
+      a.appendChild(el('p', 'label', p.tag));
+      a.appendChild(el('h3', null, p.title));
+      var d = el('p', null, p.desc); d.style.color = 'var(--soft)'; a.appendChild(d);
+      a.appendChild(el('p', 'stack', p.stack));
+      grid.appendChild(a);
+    });
+    Array.prototype.forEach.call(filters.children, function (b) { b.setAttribute('aria-pressed', String(b.textContent === current)); });
+  }
+  TABS.forEach(function (t) {
+    var b = el('button', null, t); b.type = 'button';
+    b.addEventListener('click', function () { current = t; renderProjects(); });
+    filters.appendChild(b);
+  });
+  renderProjects();
+
+  // Cursor spotlight (works for elements added later too)
+  document.addEventListener('mousemove', function (e) {
+    var t = e.target.closest && e.target.closest('[data-spot]');
+    if (!t) return;
+    var r = t.getBoundingClientRect();
+    t.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    t.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+
+  // Scroll reveal
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
+    document.documentElement.classList.add('js');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.reveal, .hero-text, .term').forEach(function (e) { io.observe(e); });
+  }
+
+  // Progress bar
+  var bar = document.querySelector('.progress');
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
